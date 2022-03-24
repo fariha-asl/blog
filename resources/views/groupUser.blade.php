@@ -1,0 +1,1 @@
+<h1>This is group Middleware user page</h1>
