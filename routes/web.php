@@ -4,7 +4,12 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\UserController;     // Http Client
 //use App\Http\Controllers\loginControllers;   //data validation
 //use App\Http\Controllers\nameController;
-use App\Http\Controllers\itemController;
+//use App\Http\Controllers\itemController;
+
+//use App\Http\Controllers\UserAuth;
+//use App\Http\Controllers\AddMember;
+use App\Http\Controllers\uploadController;
+
  
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +25,6 @@ use App\Http\Controllers\itemController;
 Route::get('/', function () {
     return view("welcome");
 });
-
-
 
 //Route::get('/user/{name}',function($name){
   //   return view('users',['name'=>$name]);
@@ -70,7 +73,41 @@ Route::group(['middleware'=>['protectedPage']],function(){
 
 
 //HTTP client method 
+//Route::Delete("item",[itemController::class,'testRequest']); 
+//Route::view("login",'users');
+
+// Session/login
+
+//Route::post('loginuser',[UserAuth::class,'userlogin']);
+
+//Route::view("userauth","userAuth");
+//Route::view("profile","profile");
+
+//Route::get('/loginuser', function () {
+  //if (session()->has('user'))
+  //{
+   //  return redirect('profile');
+  //}
+//return view ('userauth');
+  
+//});
+
+//Route::get('/logout', function () {
+  //if (session()->has('user'))
+  //{
+  //   session()->pull('user');
+  //}
+//return redirect ('userauth');
+  
+//});
+
+// Flash session
+//Route::view("add","add");
+
+//Route::post("addmember",[AddMember::class,'add']);
 
 
-Route::Delete("item",[itemController::class,'testRequest']); 
-Route::view("login",'users');
+//File Upload
+
+Route::view("upload","upload");
+Route::post('upload',[uploadController::class,'index']);
