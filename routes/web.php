@@ -8,7 +8,8 @@ use Illuminate\Support\Facades\Route;
 
 //use App\Http\Controllers\UserAuth;
 //use App\Http\Controllers\AddMember;
-use App\Http\Controllers\uploadController;
+//use App\Http\Controllers\uploadController;
+use App\Http\Controllers\MemberController;
 
  
 /*
@@ -109,5 +110,9 @@ Route::group(['middleware'=>['protectedPage']],function(){
 
 //File Upload
 
-Route::view("upload","upload");
-Route::post('upload',[uploadController::class,'index']);
+//Route::view("upload","upload");
+//Route::post('upload',[uploadController::class,'index']);
+
+
+//show list from database table
+Route::get('list',[MemberController::class,'show']);
