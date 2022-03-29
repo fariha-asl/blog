@@ -5,19 +5,26 @@
      <td>Name</td>
      <td>Email</td>
      <td>Address</td>
+     <td>Operation</td>
      </tr>
-@foreach($members as $member )
+@foreach($members as $item )
    <tr>
-     <td>{{$member['id']}}</td>
-     <td>{{$member['name']}}</td>
-     <td>{{$member['email']}}</td>
-     <td>{{$member['address']}}</td>
+     <td>{{$item['id']}}</td>
+     <td>{{$item['name']}}</td>
+     <td>{{$item['email']}}</td>
+     <td>{{$item['address']}}</td>
+     <td><a href="{{url('/delete',[$item->id])}}">Delete</a></td>
     
     </tr>
 
 @endforeach
 
 </table>
+
+
+
+
+<!-- for pagination 
 <span>
    {{$members->links()}}
 </span>
@@ -28,3 +35,4 @@
   }
 
 </style>
+––>

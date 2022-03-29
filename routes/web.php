@@ -115,4 +115,14 @@ Route::group(['middleware'=>['protectedPage']],function(){
 
 
 //show list from database table
-Route::get('list',[MemberController::class,'show']);
+//Route::get('list',[MemberController::class,'show']);
+
+
+//save data in database
+
+//Route::view("add","addmember");
+//Route::post('add',[MemberController::class,'addData']);
+
+//Delete data
+Route::get('list', [MemberController::class,'list']);
+Route::get('delete/{id}', [MemberController::class,'delete']);
