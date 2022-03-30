@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\AddMember;
 //use App\Http\Controllers\uploadController;
 use App\Http\Controllers\MemberController;
-
+use App\Http\Controllers\Members;
  
 /*
 |--------------------------------------------------------------------------
@@ -120,9 +120,14 @@ Route::group(['middleware'=>['protectedPage']],function(){
 
 //save data in database
 
-//Route::view("add","addmember");
-//Route::post('add',[MemberController::class,'addData']);
+Route::view("add","addmember");
+Route::post('add',[MemberController::class,'addData']);
 
 //Delete data
-Route::get('list', [MemberController::class,'list']);
-Route::get('delete/{id}', [MemberController::class,'delete']);
+//Route::get('list', [MemberController::class,'list']);
+//Route::get('delete/{id}', [MemberController::class,'delete']);
+//Route::get('edit/{id}', [MemberController::class,'showData']);  //for update data
+//Route::post('edit', [MemberController::class,'update']);    //for update data
+
+//Query Builder 
+Route::get('listquery',[Members::class,'dbOperation']);
