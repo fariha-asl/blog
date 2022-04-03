@@ -9,9 +9,11 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\UserAuth;
 //use App\Http\Controllers\AddMember;
 //use App\Http\Controllers\uploadController;
-use App\Http\Controllers\MemberController;
-use App\Http\Controllers\Members;
- 
+//use App\Http\Controllers\MemberController;
+//use App\Http\Controllers\Members;
+//use App\Http\Controllers\EmployeeController;
+   //use App\Http\Controllers\OneToOneController;
+  use App\Http\Controllers\OneToManyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -120,8 +122,8 @@ Route::group(['middleware'=>['protectedPage']],function(){
 
 //save data in database
 
-Route::view("add","addmember");
-Route::post('add',[MemberController::class,'addData']);
+//Route::view("add","addmember");
+//Route::post('add',[MemberController::class,'addData']);
 
 //Delete data
 //Route::get('list', [MemberController::class,'list']);
@@ -130,4 +132,13 @@ Route::post('add',[MemberController::class,'addData']);
 //Route::post('edit', [MemberController::class,'update']);    //for update data
 
 //Query Builder 
-Route::get('listquery',[Members::class,'dbOperation']);
+//Route::get('listquery',[Members::class,'dbOperation']);
+
+//Joint 
+//Route::get('employee',[EmployeeController::class,'show']);
+
+//One to One 
+//Route::get("data",[OneToOneController::class,'index']);
+
+//one to many
+Route::get("data",[OneToManyController::class,'index']);
