@@ -54,7 +54,7 @@ class Members extends Controller
       //avg,min,max,count
       //return DB::table('members')->max('id');
       //return DB::table('members')->min('name');
-      return DB::table('members')->avg('id');
+      //return DB::table('members')->avg('id');
       
 
    }
