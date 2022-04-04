@@ -13,7 +13,12 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\Members;
 //use App\Http\Controllers\EmployeeController;
    //use App\Http\Controllers\OneToOneController;
-  use App\Http\Controllers\OneToManyController;
+  //use App\Http\Controllers\OneToManyController;
+  //use App\Http\Controllers\DeviceController;
+  //use App\Http\Controllers\ProductController;
+   
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -141,4 +146,11 @@ Route::group(['middleware'=>['protectedPage']],function(){
 //Route::get("data",[OneToOneController::class,'index']);
 
 //one to many
-Route::get("data",[OneToManyController::class,'index']);
+//Route::get("data",[OneToManyController::class,'index']);
+
+// Route Model Binding 
+//Route::get("device/{key:name}",[DeviceController::class,'index']); 
+
+//Multiple DB connection
+//Route::get("list",[ProductController::class,'list']);
+
