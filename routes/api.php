@@ -24,4 +24,18 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //Route::get("data",[dummyAPI::class,'getData']);
 
 //for api get method
-Route::get("list",[DeviceController::class,'list']);
+//Route::get("list",[DeviceController::class,'list']);
+
+//FOR post Method
+
+Route::post("add",[DeviceController::class,'add']);
+
+//put
+Route::put("update",[DeviceController::class,'update']);
+
+//Delete
+Route::delete("delete/{id}",[DeviceController::class,'delete']);
+
+//search
+
+Route::get("search/{name}",[DeviceController::class,'search']);
