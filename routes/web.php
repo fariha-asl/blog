@@ -11,12 +11,12 @@ use Illuminate\Support\Facades\Route;
 //use App\Http\Controllers\uploadController;
 //use App\Http\Controllers\MemberController;
 //use App\Http\Controllers\Members;
-//use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\EmployeeController;
    //use App\Http\Controllers\OneToOneController;
   //use App\Http\Controllers\OneToManyController;
   //use App\Http\Controllers\DeviceController;
   //use App\Http\Controllers\ProductController;
-   
+    
 
 
 /*
@@ -33,6 +33,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view("welcome");
 });
+
+//excel import 
+Route::get('/import-form',[EmployeeController::class,'importForm']);
+
 
 //Route::get('/user/{name}',function($name){
   //   return view('users',['name'=>$name]);
