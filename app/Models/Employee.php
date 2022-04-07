@@ -4,10 +4,23 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\DB;
 
 class Employee extends Model
 {
     use HasFactory;
+    
+    Protected $table="employees";
+
+    protected $fillable=['name','email', 'phone','salary','department'];
+
+    public static function getEmployee()
+    {
+      $records=DB::table('employees')->select('id','name','email','phone','salary','department');
+      return $records;
+
+
+    }
 
     //one to one relation
   // public function getCompany()
@@ -16,12 +29,15 @@ class Employee extends Model
 
 
 //}
- public function getDevice()
- {
-    return $this->hasMany('App\Models\device');
+ //public function getDevice()
+ //{
+    //return $this->hasMany('App\Models\device');
 
 
- }
+
+  //}
+ 
+
 
 
 }
