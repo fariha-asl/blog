@@ -10,7 +10,7 @@ class Employee extends Model
 {
     use HasFactory;
     
-    Protected $table="employees";
+    protected $table="employees";
 
     protected $fillable=['name','email', 'phone','salary','department'];
 
@@ -18,8 +18,6 @@ class Employee extends Model
     {
       $records=DB::table('employees')->select('id','name','email','phone','salary','department');
       return $records;
-
-
     }
 
     //one to one relation

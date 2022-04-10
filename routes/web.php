@@ -37,6 +37,8 @@ Route::get('/', function () {
 //excel import 
 Route::get('/import-form',[EmployeeController::class,'importForm']);
 
+Route::post('/import-form',[EmployeeController::class,'import'])->name('employee.import');
+
 
 //Route::get('/user/{name}',function($name){
   //   return view('users',['name'=>$name]);

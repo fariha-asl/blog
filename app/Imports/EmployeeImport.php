@@ -5,8 +5,8 @@ namespace App\Imports;
 use App\Models\Employee;
 use Maatwebsite\Excel\Concerns\ToModel;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
-
-class EmployeeImport implements ToModel,ithHeadingRow
+use DB;
+class EmployeeImport implements ToModel,WithHeadingRow
 {
     /**
     * @param array $row
@@ -15,15 +15,28 @@ class EmployeeImport implements ToModel,ithHeadingRow
     */
     public function model(array $row)
     {
-        return new Employee([
-            //
-            'name' => $row['name'],
-            'email' => $row['email'],
-            'phone' => $row['phone'],
-            'salary' => $row['salary'],
-            'department' => $row['department'],
+        // return new Employee([
+        //     //
+        //     'name' => $row['name'],
+        //     'email' => $row['email'],
+        //     'phone' => $row['phone'],
+        //     'salary' => $row['salary'],
+        //     'department' => $row['department']
 
-        ]);    
-            
+        // ]);    
+        try{
+            DB::table('employees')->insert(
+                [
+                    'name' => $row['name'],
+                    'email' => $row['email'],
+                    'phone' => $row['phone'],
+                    'salary' => $row['salary'],
+                    'department' => $row['department']
+                ]
+                );
+        }catch(\Exception $e){
+            //echo "Successfully Insert into database";
+        }
+ 
     }
 }
